@@ -29,6 +29,7 @@ async def download_audio(req: DownloadRequest):
 
     ydl_opts = {
         "extractor_args": {"youtube": {"player_client": ["tv_embedded"]}},
+        "cookiefile": os.path.join(BASE_DIR, "cookies.txt"),
         "format": "bestaudio",
         "outtmpl": output_path,
          "concurrent_fragment_downloads": 16,
